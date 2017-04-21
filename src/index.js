@@ -45,7 +45,9 @@ export default class Module extends EventEmitter2 {
   get state() { return this._state; }
   get safeState() { return _.cloneDeep(this._state); }
 
+  /* eslint-disable class-methods-use-this */
   get defaultConfig() { return {}; }
+  /* eslint-enable class-methods-use-this */
 
   storePathFile(filename) {
     return this._server.moduleStorePath(this._name, filename);

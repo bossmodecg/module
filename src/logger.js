@@ -58,16 +58,16 @@ export class Logger {
     }
   }
 
-  setLogLevel(logger, logLevel) {
+  setLogLevel(logLevel) {
     if (!logLevel) return;
 
-    const logValue = [ 'trace', 'debug', 'info', 'warn', 'error', 'off' ].indexOf(logLevel);
+    const logValue = ['trace', 'debug', 'info', 'warn', 'error', 'off'].indexOf(logLevel);
 
-    logger.showTrace = logValue < 1;
-    logger.showDebug = logValue < 2;
-    logger.showInfo = logValue < 3;
-    logger.showWarn = logValue < 4;
-    logger.showError = logValue < 5;
+    this.showTrace = logValue < 1;
+    this.showDebug = logValue < 2;
+    this.showInfo = logValue < 3;
+    this.showWarn = logValue < 4;
+    this.showError = logValue < 5;
   }
 }
 
