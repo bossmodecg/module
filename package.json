@@ -1,6 +1,6 @@
 {
   "name": "@bossmodecg/module",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "The base dependency for BossmodeCG server modules.",
   "main": "dist",
   "license": "MIT",
