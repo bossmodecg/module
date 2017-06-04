@@ -2,8 +2,6 @@ import _ from 'lodash';
 import { EventEmitter2 } from 'eventemitter2';
 import NodeAsyncLocks from 'node-async-locks';
 
-import { Logger } from './logger';
-
 const jsondiffpatch = require('jsondiffpatch').create({});
 
 const DEFAULT_MODULE_OPTIONS =
@@ -29,9 +27,6 @@ export default class Module extends EventEmitter2 {
     this._config = Object.freeze(_.merge({}, this.defaultConfig, config));
     this._moduleOptions = Object.freeze(_.merge({}, DEFAULT_MODULE_OPTIONS, moduleOptions));
 
-    this._logger = new Logger(`module-${name}`);
-    this._logger.setLogLevel(this.config.logLevel);
-
     this._state = {};
   }
 
@@ -54,7 +49,8 @@ export default class Module extends EventEmitter2 {
     return this._server.moduleStorePath(this._name, filename);
   }
 
-  async register(server, http) {
+  async register(baseLogger, server, http) {
+    this._logger = baseLogger.child({ component: `module-${this.name}` });
     this._logger.info("Registering.");
 
     this._server = server;

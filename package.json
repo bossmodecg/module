@@ -13,6 +13,8 @@
   ],
   "dependencies": {
     "babel-runtime": "^6.23.0",
+    "bunyan": "^1.8.10",
+    "bunyan-prettystream": "^0.1.3",
     "eventemitter2": "^4.0.0",
     "jsondiffpatch": "^0.2.4",
     "lodash": "^4.17.4",
@@ -20,31 +22,22 @@
     "node-async-locks": "^1.0.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.0",
+    "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.1",
     "babel-jest": "^19.0.0",
-    "babel-plugin-transform-async-to-generator": "^6.22.0",
-    "babel-plugin-transform-class-properties": "^6.23.0",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.2.2",
-    "babel-preset-es2017": "^6.22.0",
+    "babel-preset-env": "^1.5.1",
+    "babel-preset-es2017": "^6.24.1",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.1",
     "eslint-plugin-flowtype": "^2.30.4",
     "eslint-plugin-import": "^2.3.0",
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.0.1",
-    "husky": "^0.13.2",
+    "husky": "^0.13.4",
     "jest": "^19.0.2"
   },
-  "scripts": {
-    "start": "babel-node",
-    "console": "babel-node",
-    "test": "eslint src && jest --coverage",
-    "build": "babel src -d dist",
-    "watch": "babel --watch src -d dist",
-    "prepublish": "npm run build",
-    "precommit": "npm run test",
-    "prepush": "npm run test"
-  }
+  "scripts": {}
 }
