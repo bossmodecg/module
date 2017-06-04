@@ -39,5 +39,14 @@
     "husky": "^0.13.4",
     "jest": "^19.0.2"
   },
-  "scripts": {}
+  "scripts": {
+    "start": "babel-node",
+    "console": "babel-node",
+    "test": "eslint src && jest --coverage",
+    "build": "babel src -d dist",
+    "watch": "babel --watch src -d dist",
+    "prepublish": "npm run build",
+    "precommit": "npm run test",
+    "prepush": "npm run test"
+  }
 }
