@@ -38,7 +38,7 @@ export default class Module extends EventEmitter2 {
   get name() { return this._name; }
   get logger() { return this._logger; }
   get config() { return this._config; }
-  get moduleOptions() { return this._moduleOptions };
+  get moduleOptions() { return this._moduleOptions; }
   get server() { return this._server; }
 
   get storePath() { return this._server.moduleStorePath(this._name); }
